@@ -1,1 +1,12 @@
 <h1>Welcome to Awesome Answers</h1>
+
+<%= link_to "New Question", new_question_path, class: "btn btn-primary"%>
+
+<% @questions.each do |question| %>
+	
+	<!-- <p><%= question.title.capitalize %></p> -->
+	<p><%= link_to question.title.upcase, question %></p> 
+	<p><%= question.body.truncate(200) %></p>
+	<hr>
+<% end %>
+	
